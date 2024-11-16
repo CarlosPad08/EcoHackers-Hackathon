@@ -1,0 +1,14 @@
+.navbar {
+    height: 80px;
+}
+
+.bg-verdebosque {
+    background-color: #228B22 !important;
+    /* Código de color verde bosque */
+}
+
+.bg-verdebosque .nav-link,
+.bg-verdebosque .navbar-brand {
+    color: white !important;
+    /* Color blanco para los elementos de navegación */
+}
