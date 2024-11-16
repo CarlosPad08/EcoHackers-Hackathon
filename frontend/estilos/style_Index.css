@@ -12,3 +12,15 @@
     color: white !important;
     /* Color blanco para los elementos de navegación */
 }
+
+.contenedor {
+    background-color: #f8f9fa;
+    /* Color de fondo gris claro */
+    border: 1px solid #dee2e6;
+    /* Bordes grises */
+    padding: 15px;
+    /* Espaciado interno */
+    margin-bottom: 10px;
+    /* Margen inferior */
+    
+}
