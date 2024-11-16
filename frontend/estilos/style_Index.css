@@ -27,4 +27,38 @@
 
 .izquierdo{
     background-color: #228B22;
+    text-align: justify;
+}
+
+.table{
+    font-size: 10px;
+}
+
+.verde{
+    background-color: #228B22 !important;
+    text-align: justify;
+}
+
+.amarillo{
+    background-color: yellow !important;
+    text-align: justify;
+}
+
+.cafe{
+    background-color: brown !important;
+    text-align: justify;
+}
+.rojo{
+    background-color: red !important;
+    text-align: justify;
+}
+
+.purpura{
+    background-color: purple !important;
+    text-align: justify;
+}
+
+.marron{
+    background-color: maroon !important;
+    text-align: justify;
 }
