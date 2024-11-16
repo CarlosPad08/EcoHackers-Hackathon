@@ -1,9 +1,10 @@
 import pandas as pd
 
-archivo = "../database/NOV_ECOHACKERS.xlsx"
+archivo = r'C:\Users\HP\Documents\Hackathon-EcoHackers\backend\pyhton\database\NOV_ECOHACKERS.xlsx'
 df = pd.read_excel(archivo)
 
-# Categorías del ICA
+print(df.head())
+
 def clasificar_ica(pm2_5, pm10):
     if pm2_5 <= 12 and pm10 <= 54:
         return "Buena"
@@ -18,11 +19,17 @@ def clasificar_ica(pm2_5, pm10):
     else:
         return "Peligrosa"
 
-# Nueva columna para la clasificación
+# Crear una nueva columna para la clasificación
 df['Categoría'] = df.apply(lambda row: clasificar_ica(row['massPM2_5Avg'], row['massPM10_0Avg']), axis=1)
 
-# Filtrar datos de riesgo (opcional)
-riesgo = df[df['Categoría'] != "Buena"]
+# Ver las primeras filas con la clasificación
+print(df.columns)
 
-# Guardar resultados en un nuevo archivo Excel
+# Filtrar datos de riesgo (opcional)
+riesgo = df[df['Categoría'].isin(["Dañina a la salud", "Peligrosa"])]
+
+# Guardar los resultados en un nuevo archivo Excel
 riesgo.to_excel("resumen_calidad_aire.xlsx", index=False)
+
+# Ver el archivo filtrado
+#print(riesgo.head())
