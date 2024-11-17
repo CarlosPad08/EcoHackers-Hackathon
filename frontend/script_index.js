@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'Dañina a la salud para algunos grupos sensibles': return 'orange';
                 case 'Dañina para la salud': return 'red';
                 case 'Muy dañina a la salud': return 'purple';
-                case 'Peligrosa': return 'brown';
+                case 'Peligrosa': return 'maroon';
                 default: return 'lightblue';
             }
         }
