@@ -27,7 +27,7 @@
     
 }
 
-#map { height: 400px; width: 100%; }
+#map { height: 425px; width: 100%; }
 .leaflet-popup-content { font-size: 14px; color: #020304;}
 
 .verde{
