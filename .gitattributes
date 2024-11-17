@@ -1,0 +1,1 @@
+backend/json_categorias/*.xlsx.json filter=lfs diff=lfs merge=lfs -text

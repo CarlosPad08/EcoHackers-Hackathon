@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Resultados</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datos Procesados</h1>
+
+    <div id="resultados"></div>
+
+    <script>
+        // Cargar el archivo JSON
+        fetch('resultados_procesados.json')
+            .then(response => response.json())
+            .then(data => {
+                // Función para mostrar los datos de cada hoja en una tabla
+                for (const sheet in data) {
+                    const table = document.createElement('table');
+                    const header = document.createElement('tr');
+
+                    // Crear encabezado de la tabla usando las claves del primer objeto en la hoja
+                    Object.keys(data[sheet][0]).forEach(key => {
+                        const th = document.createElement('th');
+                        th.textContent = key;
+                        header.appendChild(th);
+                    });
+                    table.appendChild(header);
+
+                    // Crear filas para cada objeto en la hoja
+                    data[sheet].forEach(row => {
+                        const tr = document.createElement('tr');
+                        Object.values(row).forEach(value => {
+                            const td = document.createElement('td');
+                            td.textContent = value;
+                            tr.appendChild(td);
+                        });
+                        table.appendChild(tr);
+                    });
+
+                    // Agregar la tabla a la página
+                    const div = document.createElement('div');
+                    div.appendChild(document.createElement('h2')).textContent = `Hoja: ${sheet}`;
+                    div.appendChild(table);
+                    document.getElementById('resultados').appendChild(div);
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo JSON:', error);
+            });
+    </script>
+</body>
+</html>
