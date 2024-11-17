@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var map = L.map('map').setView([3.3700, -76.5319], 12); // Coordenadas de Cali
+    var map = L.map('map').setView([3.3600, -76.5319], 12); // Coordenadas de Cali
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -34,6 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
             'Utiliza sistemas avanzados de purificación de aire.',
             'Considera abandonar la zona si la situación persiste.'
         ]
+    };
+
+    // Emoticonos según la clasificación
+    const emojis = {
+        'Buena': '😊',
+        'Moderada': '😐',
+        'Dañina a la salud para algunos grupos sensibles': '😷',
+        'Dañina para la salud': '😵',
+        'Muy dañina para la salud': '🤢',
+        'Peligrosa': '☠️'
     };
 
     // Cargar datos de sensores y clasificaciones
@@ -96,6 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Desplazar la página al contenedor de sugerencias
                 suggestionBox.scrollIntoView({ behavior: 'smooth' });
+
+                // Mostrar el emoticono correspondiente a la clasificación
+                var emojiContainer = document.getElementById('emojiContainer');
+                var classificationEmoji = document.getElementById('classificationEmoji');
+                var emojiText = document.createElement('p');
+                emojiText.classList.add('emoji-text'); // Clase CSS para estilizar el texto del emoticono
+
+                if (emojis[classification]) {
+                    classificationEmoji.src = `./emojis/${classification}.png`; // Cambia la ruta según tus imágenes de emoticonos
+                    classificationEmoji.classList.remove('d-none');
+                    emojiContainer.innerHTML = ''; // Limpiar el contenido previo
+                    emojiText.textContent = emojis[classification];
+                    emojiContainer.appendChild(classificationEmoji);
+                    emojiContainer.appendChild(emojiText);
+                } else {
+                    classificationEmoji.classList.add('d-none');
+                    emojiText.textContent = 'No hay emoticono para esta clasificación.';
+                    emojiContainer.innerHTML = '';
+                    emojiContainer.appendChild(emojiText);
+                }
             });
         });
     })
