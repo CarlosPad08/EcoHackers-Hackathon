@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'Moderada': return 'yellow';
                 case 'Dañina a la salud para algunos grupos sensibles': return 'orange';
                 case 'Dañina para la salud': return 'red';
-                case 'Muy dañina para la salud': return 'purple';
+                case 'Muy dañina a la salud': return 'purple';
                 case 'Peligrosa': return 'maroon';
                 default: return 'lightblue';
             }
@@ -91,8 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Evento para mostrar sugerencias al hacer clic en el nodo
             circleMarker.on('click', function () {
                 var suggestionBox = document.getElementById('suggestions');
-                var suggestionsContent = suggestions[classification] ? suggestions[classification].join('<li>') : 'No hay sugerencias para esta clasificación.';
-                suggestionBox.innerHTML = `<b>Sugerencias para clasificación ${classification}:</b><li>${suggestionsContent}`;
+                var suggestionsContent = suggestions[classification] ? `<ul>${suggestions[classification].map(item => `<li>${item}</li>`).join('')}</ul>` : 'No hay sugerencias para esta clasificación.';
+                suggestionBox.innerHTML = `<b>Sugerencias para clasificación ${classification}:</b><br>${suggestionsContent}`;
+
+                // Desplazar la página al contenedor de sugerencias
+                suggestionBox.scrollIntoView({ behavior: 'smooth' });
             });
         });
     })
