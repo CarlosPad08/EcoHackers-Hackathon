@@ -1,0 +1,20 @@
+[
+    {"id": 1, "name": "S1: Ecoparque Corazón de Pance", "latitude": 3.34609, "longitude": -76.55166},
+    {"id": 2, "name": "S2: Ecoparque Las Garzas", "latitude": 3.33208, "longitude": -76.53697},
+    {"id": 3, "name": "S3: Universidad San Buenaventura", "latitude": 3.34676, "longitude": -76.54446},
+    {"id": 4, "name": "S4: Universidad ICESI", "latitude": 3.3433, "longitude": -76.53061},
+    {"id": 5, "name": "S5: Universidad Autónoma De Occidente", "latitude": 3.35365, "longitude": -76.52298},
+    {"id": 6, "name": "S6: Pontificia Universidad Javeriana Cali", "latitude": 3.34872, "longitude": -76.53162},
+    {"id": 7, "name": "S7: Fundación Universitaria San Martín", "latitude": 3.34172, "longitude": -76.52153},
+    {"id": 8, "name": "S8: Universidad Libre Cali - Campus Valle del Lili", "latitude": 3.36085, "longitude": -76.52678},
+    {"id": 9, "name": "S9: Colegio Bilingüe Bennett", "latitude": 3.3595, "longitude": -76.53136},
+    {"id": 10, "name": "S10: Colegio Nuevo Cambridge", "latitude": 3.33736, "longitude": -76.53779},
+    {"id": 11, "name": "S11: Club Campestre de Cali", "latitude": 3.36915, "longitude": -76.54235},
+    {"id": 12, "name": "S12: Fundación Universitaria Católica UNICATOLICA Sede Meléndez", "latitude": 3.37532, "longitude": -76.54549},
+    {"id": 13, "name": "S13: Holguines Trade Center Centro Comercial", "latitude": 3.37179, "longitude": -76.53944},
+    {"id": 14, "name": "S14: Universidad Santiago de Cali", "latitude": 3.40339, "longitude": -76.54706},
+    {"id": 15, "name": "S15: Zonamérica", "latitude": 3.32797, "longitude": -76.52127},
+    {"id": 16, "name": "S16: Fundación Valle del Lili", "latitude": 3.37273, "longitude": -76.52562},
+    {"id": 17, "name": "S17: Colegio Nuestra Señora del Rosario", "latitude": 3.33901, "longitude": -76.52765},
+    {"id": 18, "name": "S18: La Bagatelle", "latitude": 3.36345, "longitude": -76.54102}
+]
