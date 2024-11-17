@@ -62,3 +62,11 @@
     background-color: maroon !important;
     text-align: justify;
 }
+
+.contenedor_derecho_bajo{
+    font-size: 10px; 
+}
+
+.form-check-input{
+    background-color: #228B22;
+}

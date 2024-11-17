@@ -10,6 +10,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <link rel="stylesheet" href="./estilos/style_Index.css">
+    <title>Obtener Coordenadas con Google Maps</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlY2bb2kHLU8YJqqW2buYqyaHPbgUaqlk"></script>
+    <style>
+      #map {
+          height: 100vh;
+          width: 100%;
+      }
+  </style>
 
 </head>
 
@@ -60,12 +68,53 @@
     <!-- Contenedores -->
     <div class="container mt-4">
         <div class="row"> <!-- Contenedor Izquierdo -->
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="contenedor"> Contenedor Izquierdo - Superior </div>
                 <div class="contenedor"> Contenedor Izquierdo - Inferior </div>
             </div> <!-- Contenedor Derecho -->
             <div class="col-lg-4">
-                <div class="contenedor"> Contenedor Derecho </div>
+                <div class="contenedor"> Contenedor Derecho
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Categoria</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td class="verde"></td>
+                            <td>Buena</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td class="amarillo"></td>
+                            <td>Moderada</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td class="cafe"></td>
+                            <td>Dañina para la salud de grupos sensibles</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td class="rojo"></td>
+                            <td>Dañina para la salud</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td class="purpura"></td>
+                            <td>Muy dañina para la salud</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td class="marron"></td>
+                            <td>Peligrosa</td>
+                          </tr>
+                        </tbody>
+                      </table> </div>
             </div>
         </div>
 
@@ -73,6 +122,32 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script>
+          function initMap() {
+              // Centro del mapa (Cali, Colombia)
+              const mapCenter = { lat: 3.4516, lng: -76.5319 };
+              
+              // Crear el mapa
+              const map = new google.maps.Map(document.getElementById("map"), {
+                  zoom: 13,
+                  center: mapCenter,
+              });
+  
+              // Agregar un evento de clic para obtener coordenadas
+              map.addListener("click", (e) => {
+                  const clickedLocation = {
+                      lat: e.latLng.lat(),
+                      lng: e.latLng.lng(),
+                  };
+  
+                  console.log("Coordenadas:", clickedLocation);
+                  // Aquí puedes usar las coordenadas en una variable
+              });
+          }
+  
+          // Inicializar el mapa al cargar la página
+          window.onload = initMap;
+      </script>
 </body>
 
 </html>
