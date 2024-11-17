@@ -29,3 +29,35 @@
 
 #map { height: 400px; width: 100%; }
 .leaflet-popup-content { font-size: 14px; color: #020304;}
+
+.verde{
+    background-color: #228B22 !important;
+    text-align: justify;
+}
+.amarillo{
+    background-color: yellow !important;
+    text-align: justify;
+}
+.orange{
+    background-color: orange !important;
+    text-align: justify;
+}
+.rojo{
+    background-color: red !important;
+    text-align: justify;
+}
+.purpura{
+    background-color: purple !important;
+    text-align: justify;
+}
+.marron{
+    background-color: maroon !important;
+    text-align: justify;
+}
+.contenedor_derecho_bajo{
+    font-size: 10px; 
+}
+.form-check-input{
+    background-color: #228B22;
+    
+}
