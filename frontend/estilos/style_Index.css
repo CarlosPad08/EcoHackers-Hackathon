@@ -23,4 +23,8 @@
     margin-bottom: 10px;
     /* Margen inferior */
     
+    
 }
+
+#map { height: 400px; width: 100%; }
+.leaflet-popup-content { font-size: 14px; color: #020304;}
