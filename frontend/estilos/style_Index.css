@@ -10,6 +10,7 @@
 .bg-verdebosque .nav-link,
 .bg-verdebosque .navbar-brand {
     color: white !important;
+    font-size: 20px;
     /* Color blanco para los elementos de navegación */
 }
 
